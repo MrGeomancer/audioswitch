@@ -7,12 +7,15 @@ def switch():
     # pyautogui.moveTo(1730, 1065)
     pyautogui.click(1730, 1065, button='right')
     pyautogui.click(1730, 1010)
-    time.sleep(0.4)
-    soundwindow = pyautogui.locateOnScreen('png\\soundwindow.png', confidence=0.9)
+    time.sleep(0.3)
+    soundwindow = pyautogui.locateOnScreen(r'png\soundwindow.png',confidence=0.8)
     # print(soundwindow)
+    if soundwindow == None:
+        soundwindow = pyautogui.locateOnScreen(r'png\soundwindow.png',confidence=0.8)
+        # print(soundwindow)
     pyautogui.click(soundwindow[0]+10, soundwindow[1]+45)
     time.sleep(0.2)
-    speaker_on = pyautogui.locateOnScreen('png\\speakeron.png', confidence=0.9)
+    speaker_on = pyautogui.locateOnScreen(r'png\\speakeron.png',confidence=0.95)
     if speaker_on != None:
         pyautogui.click(pyautogui.center(speaker_on), button='right')
         pyautogui.click(speaker_on[0]+50, speaker_on[1]+75)
